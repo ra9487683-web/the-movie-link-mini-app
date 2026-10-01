@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Panel — The Movie Link Bot</title>
+<link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+<main class="wrap">
+  <header><h1>🎬 The Movie Link — Admin</h1><p>Licensed / owned content management</p></header>
+
+  <section id="login" class="panel">
+    <h2>Admin Login</h2>
+    <input id="password" type="password" placeholder="Admin password">
+    <button id="loginBtn">Login</button>
+    <p id="loginMsg"></p>
+  </section>
+
+  <section id="panel" class="hidden">
+    <div class="tabs">
+      <button data-tab="content" class="active">Content</button>
+      <button data-tab="category">Categories</button>
+    </div>
+
+    <div id="contentTab">
+      <form id="contentForm" class="panel">
+        <input type="hidden" id="editId">
+        <input id="title" placeholder="Title" required>
+        <textarea id="description" placeholder="Description"></textarea>
+        <input id="poster_url" placeholder="Poster image URL">
+        <input id="watch_url" placeholder="Watch URL (licensed/owned content)">
+        <select id="category_id"></select>
+        <input id="badge" placeholder="Badge e.g. 🔥 Movie" value="🔥 Movie">
+        <label><input id="unlock_required" type="checkbox"> Require unlock</label>
+        <div><button type="submit">Save Content</button><button type="button" id="cancelEdit" class="secondary">Clear</button></div>
+      </form>
+      <div id="table" class="panel"></div>
+    </div>
+
+    <div id="categoryTab" class="hidden">
+      <form id="categoryForm" class="panel">
+        <input id="catName" placeholder="Category name" required>
+        <input id="catSlug" placeholder="slug e.g. series" required>
+        <button>Add Category</button>
+      </form>
+      <div id="categoryList" class="panel"></div>
+    </div>
+  </section>
+</main>
+<script src="/admin.js"></script>
+</body>
+</html>

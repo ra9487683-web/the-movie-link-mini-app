@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>The Movie Link Bot</title>
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="brand">🎬 <span>The Movie <b>Link</b></span></div>
+        <div class="online"><i></i> Online</div>
+      </div>
+      <div class="userbox">
+        <span id="welcome">WELCOME</span>
+        <strong id="username">User</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Hot <b>ZONE</b></h1>
+        <p>আপনার পছন্দের বৈধ Movie, Natok ও বাংলা ডাবিং এক জায়গায়।</p>
+      </section>
+
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="ভিডিও খুঁজুন..." autocomplete="off">
+        <button id="searchBtn" aria-label="Search">⌕</button>
+      </div>
+
+      <nav id="categories" class="chips"></nav>
+
+      <section class="section-head">
+        <h2 id="sectionTitle">Latest Content</h2>
+        <button id="refreshBtn" class="ghost">↻</button>
+      </section>
+
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty hidden">কোনো কনটেন্ট পাওয়া যায়নি।</div>
+    </main>
+
+    <nav class="bottom">
+      <button class="nav active" data-page="home">⌂<span>Home</span></button>
+      <button class="nav" data-page="unlocked">🔓<span>Unlocked</span></button>
+      <button class="nav" data-page="favorites">♥<span>Favorite</span></button>
+      <button class="nav" data-page="links">↗<span>Links</span></button>
+    </nav>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeModal" class="close">×</button>
+      <img id="modalPoster" alt="">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <div class="modal-actions">
+        <button id="favoriteBtn" class="action">♥ Favorite</button>
+        <button id="unlockBtn" class="action primary">🔓 Unlock</button>
+        <button id="watchBtn" class="action primary">▶ Watch</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
